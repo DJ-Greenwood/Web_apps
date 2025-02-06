@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Planning - RiskSense AI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link rel="stylesheet" href="/mainProject/styles/css/Index.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RiskSense AI</div>
+            <a href="#" class="chat-button" onclick="toggleChat()">Open AI Chat</a>
+        </div>
+    </nav>
+    <div class="dashboard-strategy">
+        <div class="card strategy-map">
+            <h2>Strategy Map</h2>
+            <canvas id="strategyMap"></canvas>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <h3>Objectives</h3>
+                <div class="metric-value">12</div>
+                <div>On Track</div>
+            </div>
+            <div class="metric-card">
+                <h3>Completion</h3>
+                <div class="metric-value">68%</div>
+                <div>Overall Progress</div>
+            </div>
+            <div class="metric-card">
+                <h3>Timeline</h3>
+                <div class="metric-value">85%</div>
+                <div>On Schedule</div>
+            </div>
+        </div>
+
+        <div class="card objectives">
+            <h2>Strategic Objectives</h2>
+            <div class="kanban-board">
+                <div class="kanban-column">
+                    <h3>Planning</h3>
+                    <div class="kanban-item" draggable="true">
+                        <h4>Market Expansion</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kanban-column">
+                    <h3>In Progress</h3>
+                    <div class="kanban-item" draggable="true">
+                        <h4>Digital Transformation</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kanban-column">
+                    <h3>Completed</h3>
+                    <div class="kanban-item" draggable="true">
+                        <h4>Process Optimization</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popup Modal -->
+    <div id="apiKeyPopup" class="popup-menu">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>How to Get an OpenAI API Key</h2>
+            <p>To get an OpenAI API key, follow these steps:</p>
+            
+            Visit the OpenAI website at <a href="https://www.openai.com" target="_blank">www.openai.com</a>.
+            Sign up for an account or log in if you already have one.
+            Navigate to the API section and follow the instructions to generate a new API <a href="https://platform.openai.com/account/api-keys">key</a>.
+            Copy the generated API key and paste it into the input field above.
+
+        </div>
+    </div>
+       <!-- Chat interface -->
+       <div class="chat-widget" id="chat-widget">
+        <div class="chat-header">
+            <h3>AI Assistant</h3>
+            <button class="close-chat" onclick="closeChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    Hello! How can I assist you with risk management, strategy, or compliance today?
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    
+    <script src="/mainProject/styles/js/RiskManagement.js"></script>
+    <script src="/mainProject/styles/js/Strategy.js"></script>
+    <script src="/mainProject/styles/js/ChatInterface.js"></script>
+    <script src="/mainProject/styles/js/BackButton.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+             <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <p>&copy; 2023 RiskSense AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

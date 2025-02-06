@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Header -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiskSense AI</title>
+    <link rel="stylesheet" href="/mainProject/styles/css/Index.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RiskSense AI</div>
+            <a href="#" class="chat-button" onclick="toggleChat()">Open AI Chat</a>
+        </div>
+    </nav>
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AI-Powered Business Intelligence</h1>
+            <p>Transform your business with advanced AI solutions for risk management, strategy, and compliance</p>
+          
+        </div>
+    </section>
+
+    <!-- Services section -->
+    <section class="services">
+        <div class="service-card">
+            <div class="service-icon">🎯</div>
+            <h3>Risk Management</h3>
+            <p>AI-driven risk assessment and mitigation strategies to protect your business interests</p>
+            <button id="risk-btn">Risk</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Strategic Planning</h3>
+            <p>Data-backed strategic planning tools to guide your business toward sustainable growth</p>
+            <button id="strategy-btn">Strategy</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">👥</div>
+            <h3>Team Leadership</h3>
+            <p>Advanced insights for effective team management and leadership development</p>
+            <button id="team-btn">Team</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📈</div>
+            <h3>Data-Driven Decision-Making</h3>
+            <p>Transform complex data into actionable business intelligence</p>
+            <button id="data-btn">Data</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">⚖️</div>
+            <h3>Regulatory Compliance</h3>
+            <p>Stay compliant with AI-powered regulatory monitoring and updates</p>
+            <button id="compliance-btn">Regulatory</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📋</div>
+            <h3>Auditing</h3>
+            <p>Automated auditing processes with advanced AI analysis capabilities</p>
+            <button id="auditing-btn">Audit</button>
+        </div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div id="apiKeyPopup" class="popup-menu">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>How to Get an OpenAI API Key</h2>
+            <p>To get an OpenAI API key, follow these steps:</p>
+            
+            Visit the OpenAI website at <a href="https://www.openai.com" target="_blank">www.openai.com</a>.
+            Sign up for an account or log in if you already have one.
+            Navigate to the API section and follow the instructions to generate a new API <a href="https://platform.openai.com/account/api-keys">key</a>.
+            Copy the generated API key and paste it into the input field above.
+
+        </div>
+    </div>
+<!-- Chat Interface -->
+<div class="chat-widget" id="chat-widget">
+    <div class="chat-header">
+        <h3>AI Assistant</h3>
+        <button class="clear-chat" onclick="clearChatHistory()">🗑 Clear</button>
+        <button class="close-chat" onclick="closeChat()">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+        <!-- Messages will be dynamically added here -->
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+    <!-- scripts section -->
+    <script src="/mainProject/styles/js/Index.js"></script>
+    <script src="/mainProject/styles/js/ChatInterface.js"></script>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+             <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <p>&copy; 2023 RiskSense AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Popup Modal -->
+    <div id="apiKeyPopup" class="popup-menu">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>How to Get an OpenAI API Key</h2>
+            <p>To get an OpenAI API key, follow these steps:</p>
+            
+            Visit the OpenAI website at <a href="https://www.openai.com" target="_blank">www.openai.com</a>.
+            Sign up for an account or log in if you already have one.
+            Navigate to the API section and follow the instructions to generate a new API <a href="https://platform.openai.com/account/api-keys">key</a>.
+            Copy the generated API key and paste it into the input field above.
+
+        </div>
+    </div>
+
+</body>
+</html>

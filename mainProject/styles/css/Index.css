@@ -1,0 +1,1035 @@
+/* ==========================================================================
+    Root Variables & Reset
+    ========================================================================== */
+:root {
+     --primary: #2563eb;
+     --secondary: #4f46e5;
+     --dark: #1e293b;
+     --light: #f8fafc;
+     --accent: #6366f1;
+     --danger: #ef4444;
+     --warning: #f59e0b;
+     --success: #10b981;
+     --bg-light: #f8fafc;
+     --bx-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: 'Segoe UI', sans-serif;
+     line-height: 1.6;
+     color: var(--dark);
+     background: var(--bg-light);
+     padding: 1rem;
+     padding-top: 80px; /* Offset for the fixed navbar */
+}
+
+canvas{
+     width: 100% !important;
+     height: 100% !important;
+}
+.navbar {
+     position: sticky;
+     top: 0;
+     z-index: 600;
+}
+
+/* ==========================================================================
+    Layout Components
+    ========================================================================== */
+/* Navbar */
+.navbar {
+     background: white;
+     padding: 1rem 2rem;
+     box-shadow: var(--bx-shadow);
+     position: fixed;
+     width: 100%;
+     height: 70px;
+     left: 0;
+     top: 0;
+     z-index: 600;
+}
+
+.nav-content {
+     max-width: 1200px;
+     margin: 0 auto;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     height: 65px;
+}
+
+.logo {
+     font-size: 1.5rem;
+     font-weight: bold;
+     color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+     color: white;
+     padding: 8rem 2rem 4rem;
+     text-align: center;
+}
+
+.hero-content {
+     max-width: 800px;
+     margin: 0 auto;
+}
+
+.hero h1 {
+     font-size: 2.5rem;
+     margin-bottom: 1rem;
+}
+
+.hero p {
+     font-size: 1.2rem;
+     opacity: 0.9;
+}
+
+/* Services Section */
+.services {
+     max-width: 1200px;
+     margin: 4rem auto;
+     padding: 0 2rem;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 2rem;
+}
+
+.service-card {
+     background: white;
+     padding: 2rem;
+     border-radius: 15px;
+     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+     transition: transform 0.3s;
+}
+
+.service-card:hover {
+     transform: translateY(-5px);
+}
+
+/* ==========================================================================
+    Dashboard Components
+    ========================================================================== */
+.dashboard {
+     max-width: 1400px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 1rem;
+     padding-top: 10px;
+}
+
+.card {
+     background: white;
+     border-radius: 10px;
+     padding: 1.5rem;
+     box-shadow: var(--bx-shadow);
+}
+
+/* Risk Management */
+.risk-matrix {
+     grid-column: span 2;
+     min-height: 400px;
+}
+
+.risk-list {
+     grid-column: span 2;
+}
+
+.risk-badge {
+     padding: 0.25rem 0.75rem;
+     border-radius: 15px;
+     font-size: 0.875rem;
+}
+
+.risk-badge.high {
+     background: #fecaca;
+     color: #991b1b;
+}
+
+.risk-badge.medium {
+     background: #fef3c7;
+     color: #92400e;
+}
+
+.risk-badge.low {
+     background: #d1fae5;
+     color: #065f46;
+}
+
+/* Performance & Team */
+.team-overview,
+.performance-chart {
+     grid-column: span 2;
+}
+
+.performance-chart {
+     height: 400px;
+}
+
+.team-member {
+     display: flex;
+     align-items: center;
+     padding: 1rem;
+     border-bottom: 1px solid #e2e8f0;
+}
+
+.avatar {
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     background: #e2e8f0;
+     margin-right: 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-weight: bold;
+}
+
+/* Kanban Board */
+.kanban-board {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 1rem;
+     padding: 1rem;
+}
+
+.kanban-column {
+     background: #f1f5f9;
+     padding: 1rem;
+     border-radius: 8px;
+     min-height: 300px;
+}
+
+.kanban-item {
+     background: white;
+     padding: 1rem;
+     margin-bottom: 0.5rem;
+     border-radius: 4px;
+     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+     cursor: pointer;
+}
+
+/* Metrics and Status */
+.metrics,
+.status-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     gap: 1rem;
+}
+
+.metric-card,
+.status-card {
+     background: white;
+     padding: 1rem;
+     border-radius: 8px;
+     text-align: center;
+}
+
+.metric-value,
+.status-value {
+     font-size: 2rem;
+     font-weight: bold;
+     margin: 0.5rem 0;
+}
+
+/* Status Colors */
+.high, .violation { color: var(--danger); }
+.medium, .warning { color: var(--warning); }
+.low, .compliant { color: var(--success); }
+
+/* Progress Bars */
+.progress-bar,
+.skill-bar {
+     height: 8px;
+     background: #e2e8f0;
+     border-radius: 4px;
+     margin-top: 0.5rem;
+}
+
+.progress-fill,
+.skill-progress {
+     height: 100%;
+     background: var(--primary);
+     border-radius: 4px;
+     transition: width 0.3s ease;
+}
+
+/* ==========================================================================
+    Interactive Components
+    ========================================================================== */
+/* Chat Widget */
+.chat-widget {
+     position: fixed;
+     bottom: 2rem;
+     right: 2rem;
+     background: white;
+     border-radius: 15px;
+     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+     width: 400px;
+     max-height: 600px;
+     display: none;
+     overflow: hidden;
+     z-index: 1000;
+}
+
+.chat-header {
+     background: var(--primary);
+     color: white;
+     padding: 1rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.chat-messages {
+     height: 400px;
+     overflow-y: auto;
+     padding: 1rem;
+}
+
+.chat-input {
+     padding: 1rem;
+     border-top: 1px solid #e2e8f0;
+     display: flex;
+     gap: 0.5rem;
+}
+
+.chat-button {
+     background: var(--primary);
+     color: white;
+     padding: 0.5rem 1.5rem;
+     border-radius: 25px;
+     text-decoration: none;
+     transition: transform 0.2s;
+}
+
+.chat-button:hover {
+     transform: translateY(-2px);
+}
+
+/* Popup Components */
+.popup,
+.modal,
+#riskModal {
+     display: none;
+     position: fixed;
+     z-index: 1000;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     justify-content: center;
+     align-items: center;
+}
+
+.popup-content,
+.modal-content {
+     background: white;
+     padding: 2rem;
+     border-radius: 10px;
+     width: 90%;
+     max-width: 500px;
+     margin: 2rem auto;
+     position: relative;
+}
+
+.popup-menu {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: white;
+     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+     border-radius: 10px;
+     width: 300px;
+     padding: 1rem;
+     z-index: 1100;
+     display: none;
+}
+
+.popup-menu.active {
+     display: block;
+}
+
+/* Close Buttons */
+.close,
+.close-chat {
+     background: none;
+     border: none;
+     color: white;
+     font-size: 1.5rem;
+     font-weight: bold;
+     cursor: pointer;
+     transition: 0.3s;
+}
+
+.close-chat:hover {
+     color: var(--warning);
+}
+
+/* Forms */
+.form-group {
+     margin-bottom: 1.5rem;
+}
+
+label {
+     display: block;
+     margin-bottom: 0.5rem;
+     font-weight: 500;
+}
+
+input, select, textarea {
+     width: 100%;
+     padding: 0.75rem;
+     border: 2px solid #e2e8f0;
+     border-radius: 8px;
+     font-size: 1rem;
+}
+
+input:focus, select:focus {
+     border-color: var(--primary);
+     outline: none;
+}
+
+/* Buttons */
+button {
+     padding: 0.75rem 1.5rem;
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     background: var(--primary);
+     color: white;
+     font-size: 1rem;
+     transition: transform 0.2s;
+}
+
+button:hover {
+     transform: translateY(-1px);
+}
+
+.actions {
+     display: flex;
+     gap: 1rem;
+     margin-top: 1rem;
+}
+
+/* Footer */
+.footer {
+     background: var(--dark);
+     color: white;
+     text-align: center;
+     padding: 1rem 0;
+     position: relative;
+     bottom: 0;
+     width: 100%;
+}
+
+.footer p {
+     margin: 0;
+     width: 100%;
+}
+
+.footer a {
+     color: var(--bg-light);
+     text-decoration: none;
+}
+
+/* ==========================================================================
+    Media Queries
+    ========================================================================== */
+@media (max-width: 768px) {
+     .chat-widget {
+          width: 100%;
+          height: 100%;
+          bottom: 0;
+          right: 0;
+          border-radius: 0;
+     }
+     
+     .settings-nav {
+          flex-direction: column;
+     }
+     
+     .grid-2,
+     .status-grid,
+     .performance-grid {
+          grid-template-columns: 1fr;
+     }
+     
+     .metric-group {
+          grid-template-columns: 1fr;
+     }
+}
+
+/* ==========================================================================
+    Strategy Section
+    ========================================================================== */
+.dashboard-strategy {
+     max-width: 1400px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 1rem;
+}
+
+.strategy-map {
+     grid-column: span 2;
+     min-height: 400px;
+}
+
+.objectives {
+     grid-column: span 2;
+}
+
+/* ==========================================================================
+    Data Driven Section
+    ========================================================================== */
+    .trends {
+        grid-column: span 2;
+        height: 400px;
+    }
+
+    .prediction {
+        grid-column: span 2;
+    }
+
+    .metric-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .metric-card {
+        padding: 1.5rem;
+        text-align: center;
+        background: #f8fafc;
+        border-radius: 8px;
+    }
+
+    .metric-value {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary);
+        margin: 0.5rem 0;
+    }
+
+    .metric-trend {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .trend-up { color: var(--success); }
+    .trend-down { color: var(--danger); }
+
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .data-table th {
+        background: #f8fafc;
+        font-weight: 600;
+    }
+
+    .actions {
+        display: flex;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        background: var(--primary);
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .confidence {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        background: #f0f9ff;
+        border-radius: 5px;
+        margin: 1rem 0;
+    }
+
+    .confidence-bar {
+        flex: 1;
+        height: 8px;
+        background: #e2e8f0;
+        border-radius: 4px;
+    }
+
+    .confidence-fill {
+        height: 100%;
+        background: var(--primary);
+        border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+        .metric-group {
+            grid-template-columns: 1fr;
+        }
+    }
+/* ==========================================================================
+    Compliance Section
+    ========================================================================== */
+    .compliance-status {
+        grid-column: span 2;
+    }
+
+    .status-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .status-card {
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .status-value {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+    }
+
+    .compliant { color: var(--success); }
+    .warning { color: var(--warning); }
+    .violation { color: var(--danger); }
+
+    .requirements-list {
+        grid-column: span 2;
+    }
+
+    .requirement-item {
+        padding: 1rem;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .requirement-status {
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.875rem;
+    }
+
+    .status-compliant {
+        background: #d1fae5;
+        color: #065f46;
+    }
+
+    .status-warning {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .status-violation {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .deadlines {
+        grid-column: span 2;
+    }
+
+    .timeline {
+        margin-top: 1rem;
+        position: relative;
+    }
+
+    .timeline-item {
+        padding: 1rem;
+        border-left: 2px solid #e2e8f0;
+        margin-left: 1rem;
+        position: relative;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -0.5rem;
+        top: 1.5rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid var(--primary);
+    }
+
+    .actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        background: var(--primary);
+        color: white;
+        cursor: pointer;
+    }
+
+    .filter-bar {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .filter-bar select {
+        padding: 0.5rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .status-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+/* ==========================================================================
+    Auditing Section
+    ========================================================================== */
+    .audit-log {
+        grid-column: span 2;
+    }
+
+    .findings {
+        grid-column: span 2;
+    }
+
+    .audit-trail {
+        margin-top: 1rem;
+    }
+
+    .audit-entry {
+        padding: 1rem;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .audit-meta {
+        display: flex;
+        gap: 1rem;
+        color: #64748b;
+        font-size: 0.875rem;
+    }
+
+    .finding-item {
+        padding: 1rem;
+        border-left: 4px solid;
+        margin-bottom: 1rem;
+        background: #f8fafc;
+    }
+
+    .finding-high { border-color: var(--danger); }
+    .finding-medium { border-color: var(--warning); }
+    .finding-low { border-color: var(--success); }
+
+    .finding-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
+
+    .severity {
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.875rem;
+    }
+
+    .severity-high {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .severity-medium {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .severity-low {
+        background: #d1fae5;
+        color: #065f46;
+    }
+
+    .controls {
+        display: flex;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        background: var(--primary);
+        color: white;
+        cursor: pointer;
+    }
+
+    .evidence {
+        padding: 1rem;
+        background: #f1f5f9;
+        border-radius: 5px;
+        margin-top: 1rem;
+        font-family: monospace;
+    }
+
+    .status-tracker {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .status-card {
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        background: #f8fafc;
+    }
+
+    .status-value {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+    }
+
+    @media (max-width: 768px) {
+        .status-tracker {
+            grid-template-columns: 1fr;
+        }
+    }
+/* ==========================================================================
+    Settings Section
+     ========================================================================== */
+     .settings-container {
+          max-width: 1000px;
+          margin: 2rem auto;
+          padding: 0 1rem;
+      }
+
+      .settings-nav {
+          background: white;
+          padding: 1rem;
+          border-radius: 10px;
+          margin-bottom: 1rem;
+          display: flex;
+          gap: 1rem;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      .nav-item {
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+
+      .nav-item.active {
+          background: var(--primary);
+          color: white;
+      }
+
+      .settings-panel {
+          background: white;
+          padding: 2rem;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      .section {
+          margin-bottom: 2rem;
+          display: none;
+      }
+
+      .section.active {
+          display: block;
+      }
+
+      h2 {
+          margin-bottom: 1.5rem;
+          color: var(--dark);
+      }
+
+      .form-group {
+          margin-bottom: 1.5rem;
+      }
+
+      label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+      }
+
+      input, select {
+          width: 100%;
+          padding: 0.75rem;
+          border: 2px solid #e2e8f0;
+          border-radius: 8px;
+          font-size: 1rem;
+      }
+
+      input:focus, select:focus {
+          border-color: var(--primary);
+          outline: none;
+      }
+
+      .grid-2 {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1rem;
+      }
+
+      .alert {
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1rem;
+          display: none;
+      }
+
+      .alert.success {
+          background: #d1fae5;
+          color: #065f46;
+      }
+
+      .alert.error {
+          background: #fee2e2;
+          color: #991b1b;
+      }
+
+      .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+      }
+
+      .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+      }
+
+      .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          transition: .4s;
+          border-radius: 34px;
+      }
+
+      .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          transition: .4s;
+          border-radius: 50%;
+      }
+
+      input:checked + .slider {
+          background-color: var(--primary);
+      }
+
+      input:checked + .slider:before {
+          transform: translateX(26px);
+      }
+
+      .toggle-group {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+      }
+
+      button {
+          padding: 0.75rem 1.5rem;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 1rem;
+          transition: transform 0.2s;
+      }
+
+      .save-btn {
+          background: var(--primary);
+          color: white;
+      }
+
+      button:hover {
+          transform: translateY(-1px);
+      }
+
+      .btn-group {
+          display: flex;
+          gap: 1rem;
+          margin-top: 2rem;
+      }
+
+      @media (max-width: 768px) {
+          .settings-nav {
+              flex-direction: column;
+          }
+          
+          .grid-2 {
+              grid-template-columns: 1fr;
+          }
+      }
+      .clear-chat {
+        background: none;
+        border: none;
+        color: red;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-right: 10px;
+        transition: color 0.3s ease;
+    }
+    
+    .clear-chat:hover {
+        color: darkred;
+    }
+    

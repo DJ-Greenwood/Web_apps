@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditing - RiskSense AI</title>
+    <link rel="stylesheet" href="/mainProject/styles/css/Index.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RiskSense AI</div>
+            <a href="#" class="chat-button" onclick="toggleChat()">Open AI Chat</a>
+        </div>
+    </nav>
+    <div class="dashboard">
+        <div class="card audit-log">
+            <h2>Audit Log</h2>
+            <div class="status-tracker">
+                <div class="status-card">
+                    <h3>Total Audits</h3>
+                    <div class="status-value">156</div>
+                </div>
+                <div class="status-card">
+                    <h3>Open Findings</h3>
+                    <div class="status-value" style="color: var(--danger);">12</div>
+                </div>
+                <div class="status-card">
+                    <h3>Completion Rate</h3>
+                    <div class="status-value" style="color: var(--success);">92%</div>
+                </div>
+            </div>
+            <div class="controls">
+                <button onclick="startAudit()">Start New Audit</button>
+                <button onclick="exportLog()">Export Log</button>
+            </div>
+            <div class="audit-trail">
+                <div class="audit-entry">
+                    <div>
+                        <h3>Financial Controls Review</h3>
+                        <div class="audit-meta">
+                            <span>Conducted by: J. Smith</span>
+                            <span>Date: 2024-02-05</span>
+                        </div>
+                    </div>
+                    <button>View Details</button>
+                </div>
+                <div class="audit-entry">
+                    <div>
+                        <h3>Security Compliance Check</h3>
+                        <div class="audit-meta">
+                            <span>Conducted by: AI System</span>
+                            <span>Date: 2024-02-04</span>
+                        </div>
+                    </div>
+                    <button>View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card findings">
+            <h2>Audit Findings</h2>
+            <div class="controls">
+                <select>
+                    <option>All Severities</option>
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+                <select>
+                    <option>All Statuses</option>
+                    <option>Open</option>
+                    <option>In Progress</option>
+                    <option>Resolved</option>
+                </select>
+            </div>
+            <div class="finding-item finding-high">
+                <div class="finding-header">
+                    <h3>Access Control Vulnerability</h3>
+                    <span class="severity severity-high">High</span>
+                </div>
+                <p>Unauthorized access potential in user authentication system</p>
+                <div class="evidence">
+                    {"timestamp": "2024-02-05T10:30:00Z",
+                     "location": "auth_service",
+                     "details": "Missing rate limiting on login attempts"}
+                </div>
+            </div>
+            <div class="finding-item finding-medium">
+                <div class="finding-header">
+                    <h3>Documentation Gap</h3>
+                    <span class="severity severity-medium">Medium</span>
+                </div>
+                <p>Incomplete process documentation for financial reporting</p>
+            </div>
+            <div class="finding-item finding-low">
+                <div class="finding-header">
+                    <h3>Minor Policy Update Required</h3>
+                    <span class="severity severity-low">Low</span>
+                </div>
+                <p>Policy requires update to reflect new compliance requirements</p>
+            </div>
+        </div>
+    </div>
+    <!-- Popup Modal -->
+    <div id="apiKeyPopup" class="popup-menu">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>How to Get an OpenAI API Key</h2>
+            <p>To get an OpenAI API key, follow these steps:</p>
+            
+            Visit the OpenAI website at <a href="https://www.openai.com" target="_blank">www.openai.com</a>.
+            Sign up for an account or log in if you already have one.
+            Navigate to the API section and follow the instructions to generate a new API <a href="https://platform.openai.com/account/api-keys">key</a>.
+            Copy the generated API key and paste it into the input field above.
+
+        </div>
+    </div>
+       <!-- Chat interface -->
+       <div class="chat-widget" id="chat-widget">
+        <div class="chat-header">
+            <h3>AI Assistant</h3>
+            <button class="close-chat" onclick="closeChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    Hello! How can I assist you with risk management, strategy, or compliance today?
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script>
+
+    </script>
+        <script src="/mainProject/Styles/js/ChatInterface.js"></script>
+        <script src="/mainProject/styles/js/Auditing.js"></script>
+        <script src="/mainProject/styles/js/BackButton.js"></script>
+        <footer class="footer">
+            <div class="footer-content">
+                 <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <p>&copy; 2023 RiskSense AI. All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>
