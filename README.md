@@ -26,7 +26,7 @@ RiskSense AI is an AI-powered business intelligence tool designed to help organi
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/RiskSenseAI.git
+    git clone https://github.com/DJ-Greenwood/RiskSenseAI.git
     ```
 2. Navigate to the project directory:
     ```sh

@@ -12,7 +12,7 @@ function initTrendsChart() {
             },
             {
                 label: 'Customers',
-                data: [1800, 2000, 2150, 2250, 2350, 2450],
+                data: [18000, 20000, 21500, 22500, 23500, 24500],
                 borderColor: '#10b981',
                 tension: 0.4
             }]

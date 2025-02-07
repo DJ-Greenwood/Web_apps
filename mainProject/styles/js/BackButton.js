@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         cursor: 'pointer', color: '#fff', fontSize: '24px'
     });
-    button.innerHTML = '+';
+    button.innerHTML = '&#9776;'; // Unicode for the navigation (hamburger) icon
     document.body.appendChild(button);
 
     const menu = document.createElement('div');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(menu);
 
     const pageMapping = {
-        "Home": "Index.html",
+        "Home": "../../Index.html",
         "Risk": "Risk.html",
         "Strategy": "Strategy.html",
         "Team": "Team.html",
